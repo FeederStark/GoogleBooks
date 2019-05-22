@@ -1,0 +1,71 @@
+.button-like {
+  border: 2px solid #a9a9a9;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #a9a9a9;
+  transition: all ease 0.4s;
+}
+
+span {
+  margin-left: 0.5rem;
+}
+
+.fa,
+span {
+  transition: all ease 0.4s;
+}
+
+.button-like:focus {
+  background-color: transparent;
+}
+
+.button-like:focus.fa,
+span {
+  color: #a9a9a9;
+}
+
+.button-like:hover {
+  cursor: pointer;
+  border-color: #cc3300;
+  background-color: transparent;
+}
+
+.button-like:hover.fa,
+span {
+  color: #cc3300;
+}
+
+.liked {
+  background-color: #cc3300;
+  border-color: #cc3300;
+}
+
+.liked .fa,
+span {
+  color: #fff;
+}
+
+.liked:focus {
+  background-color: #cc3300;
+}
+
+.liked:focus.fa,
+span {
+  color: #fff;
+}
+
+.liked:hover {
+  background-color: #cc3300;
+  border-color: #cc3300;
+}
+
+.liked.fa,
+span {
+  color: #fff;
+}
