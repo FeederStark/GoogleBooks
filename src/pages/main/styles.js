@@ -29,7 +29,6 @@ export const Button = styled(Link)`
   text-align: center;
   transition-duration: 0.4s;
   overflow: hidden;
-  /* box-shadow: 0 5px 15px #193047; */
   border-radius: 4px;
   &:hover {
     background: #fff;
