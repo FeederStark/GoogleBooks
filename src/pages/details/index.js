@@ -14,6 +14,7 @@ import {
   DetailsContainer,
 } from './styles';
 import './styles.css';
+import Star from '../../assets/images/star.png';
 
 class Details extends Component {
   state = {
@@ -71,7 +72,7 @@ class Details extends Component {
             </div>
             <Price>
               <h2>R${book.price}</h2>
-              <p>Stars</p>
+              <img src={Star} alt="Rating" />
             </Price>
           </RightDiv>
         </TopHeader>

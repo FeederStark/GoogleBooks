@@ -36,9 +36,12 @@ export const RightDiv = styled.div`
 export const Price = styled.div`
   display: flex;
   align-items: center;
-  p {
-    margin-left: 20px;
-    color: #000;
+  img {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 44px;
+    left: 20px;
   }
 `;
 
