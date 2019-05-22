@@ -12,6 +12,7 @@ export const Container = styled.div`
 
 export const TopHeader = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const LeftDiv = styled.div`
@@ -35,13 +36,16 @@ export const RightDiv = styled.div`
 
 export const Price = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  h2 {
+    font-size: 18px;
+  }
   img {
     height: 100px;
     width: 100px;
-    position: relative;
-    top: 44px;
-    left: 20px;
+    position: absolute;
+    margin-top: 39px;
+    margin-left: 200px;
   }
 `;
 

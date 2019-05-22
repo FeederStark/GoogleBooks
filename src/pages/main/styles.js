@@ -24,4 +24,5 @@ export const Button = styled(Link)`
   font-size: 80px;
   color: #212121;
   cursor: pointer;
+  text-decoration: none;
 `;

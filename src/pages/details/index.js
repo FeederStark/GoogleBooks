@@ -71,7 +71,7 @@ class Details extends Component {
               {!!book.authors && book.authors.map(author => <p key={author}>by {author}</p>)}
             </div>
             <Price>
-              <h2>R${book.price}</h2>
+              <h2>{book.price}</h2>
               <img src={Star} alt="Rating" />
             </Price>
           </RightDiv>
