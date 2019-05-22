@@ -57,7 +57,7 @@ class Home extends Component {
             <CardsContainer ref={scrollRef}>
               {books.map(book => (
                 <CardWrapper to={`/details/${book.id}`} key={book.id}>
-                  <Card src={book.img} alt="avatar" />
+                  <Card src={book.img} alt={book.title} />
                 </CardWrapper>
               ))}
             </CardsContainer>

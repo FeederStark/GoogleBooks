@@ -25,6 +25,12 @@ class Details extends Component {
     match: PropTypes.shape({
       params: PropTypes.shape({
         id: PropTypes.string,
+        img: PropTypes.string,
+        title: PropTypes.string,
+        authors: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
+        price: PropTypes.string,
+        pages: PropTypes.number,
+        description: PropTypes.string,
       }),
     }).isRequired,
     book: PropTypes.shape({}).isRequired,
