@@ -11,6 +11,7 @@ import { Creators as BooksActions } from '../../store/ducks/books';
 class Home extends Component {
   state = {
     bookInput: '',
+    lastSent: '',
   };
 
   static propTypes = {
@@ -29,13 +30,14 @@ class Home extends Component {
     e.preventDefault();
     const { searchBooksRequest } = this.props;
     const { bookInput } = this.state;
+    this.setState({ lastSent: bookInput });
     await searchBooksRequest(bookInput);
   };
 
   handleScroll = () => {
     const { searchMoreBooksRequest, books } = this.props;
-    const { bookInput } = this.state;
-    searchMoreBooksRequest(bookInput, books.length);
+    const { lastSent } = this.state;
+    searchMoreBooksRequest(lastSent, books.length);
   };
 
   render() {
