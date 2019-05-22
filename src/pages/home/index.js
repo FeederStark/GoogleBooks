@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import BottomScrollListener from 'react-bottom-scroll-listener';
 import PropTypes from 'prop-types';
 import {
   Container, CardsContainer, CardWrapper, Card, Label,
@@ -21,6 +22,7 @@ class Home extends Component {
         id: PropTypes.string,
       }),
     ).isRequired,
+    searchMoreBooksRequest: PropTypes.func.isRequired,
   };
 
   handleSubmit = async (e) => {
@@ -28,6 +30,12 @@ class Home extends Component {
     const { searchBooksRequest } = this.props;
     const { bookInput } = this.state;
     await searchBooksRequest(bookInput);
+  };
+
+  handleScroll = () => {
+    const { searchMoreBooksRequest, books } = this.props;
+    const { bookInput } = this.state;
+    searchMoreBooksRequest(bookInput, books.length);
   };
 
   render() {
@@ -44,13 +52,17 @@ class Home extends Component {
             />
           </Label>
         </form>
-        <CardsContainer>
-          {books.map(book => (
-            <CardWrapper to={`/details/${book.id}`} key={book.id}>
-              <Card src={book.img} alt="avatar" />
-            </CardWrapper>
-          ))}
-        </CardsContainer>
+        <BottomScrollListener onBottom={this.handleScroll}>
+          {scrollRef => (
+            <CardsContainer ref={scrollRef}>
+              {books.map(book => (
+                <CardWrapper to={`/details/${book.id}`} key={book.id}>
+                  <Card src={book.img} alt="avatar" />
+                </CardWrapper>
+              ))}
+            </CardsContainer>
+          )}
+        </BottomScrollListener>
       </Container>
     );
   }
